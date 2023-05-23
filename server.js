@@ -1,9 +1,11 @@
 const express = require('express')
+const path = require('path')
 const app = express()
+const multer = require('multer')
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('This is the testing for the project setup')
+  res.sendFile(path.join(__dirname,'template/index.html'))
 })
 
 app.listen(port, () => {
