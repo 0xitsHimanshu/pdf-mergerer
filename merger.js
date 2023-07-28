@@ -1,18 +1,23 @@
 //importing the merger
 const PDFMerger = require('pdf-merger-js')
+const crypto = require('crypto')
 
-var merger = new PDFMerger()
+const generateUniqueName = () =>{
+    const randomByte = crypto.randomBytes(8).toString('hex');
+    return randomByte;
+}
 //fuction for merging pdfs 
 const mergePDFs = async (p1,p2)=>{
+    const merger = new PDFMerger();
     await merger.add(p1);
     await merger.add(p2)
 
-    //getting timestamp for always a unique name
-    let d = new Date().getTime();
+    //getting unique name
+    let name = generateUniqueName()
     
-    await merger.save(`public/${d}.pdf`)
+    await merger.save(`public/${name}.pdf`)
 
-    return d;
+    return name;
 }
 
 module.exports = {mergePDFs};
