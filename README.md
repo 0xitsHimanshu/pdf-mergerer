@@ -15,16 +15,16 @@ PDF Merging is a Node.js web application that allows users to merge two or more 
 
 1. Clone the repository from GitHub:
 
-git clone https://github.com/your-username/PdfMerging.git
-cd PdfMerging
+    git clone https://github.com/your-username/PdfMerging.git
+    cd PdfMerging
 
 2. Install the required dependencies using npm:
 
-npm install
+    npm install
 
 3. Start the server:
 
-npm start
+    npm start
 
 ## Usage
 
